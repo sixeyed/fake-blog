@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+  
+  ghost:
+    image: sixeyed/fake-blog:ghost
+    networks:
+      app-net:
+
+  nginx:
+    image: sixeyed/fake-blog:nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - ghost
+    networks:
+      app-net:
+
+networks:
+  app-net:

@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  
+  ghost:
+    build:      
+      context: ../ghost
+
+  nginx:
+    build:      
+      context: ../nginx
